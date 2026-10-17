@@ -1,0 +1,16 @@
+# Local capture and QA tools are not part of the public website repository.
+/LOCAL-NOTES.md
+/evidence/
+/capture.py
+/cdp_local.py
+/qa.py
+/preview.py
+/inspect-public.ps1
+/package-release.py
+/release-manifest.json
+/basho-studios-static.zip
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example

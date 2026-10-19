@@ -2,19 +2,14 @@
 (() => {
   const scene = document.querySelector('.landscape');
   const main = document.querySelector('main');
-  const control = document.querySelector('.motion-toggle');
   const template = document.querySelector('#landscape-loop');
-  if (!scene || !main || !control || !template || !Element.prototype.animate) return;
+  if (!scene || !main || !template || !Element.prototype.animate) return;
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
-  let track, animation, pending, userPaused = false, visible = true;
-  const shouldPause = () => userPaused || preference.matches || document.hidden || !visible || !!document.querySelector('#games[open]');
+  let track, animation, pending, visible = true;
+  const shouldPause = () => preference.matches || document.hidden || !visible || !!document.querySelector('#games[open]');
   function sync() {
     const still = preference.matches;
     scene.classList.toggle('is-still', still);
-    control.hidden = still || !animation;
-    control.setAttribute('aria-pressed', String(userPaused));
-    control.setAttribute('aria-label', userPaused ? 'Resume landscape motion' : 'Pause landscape motion');
-    control.querySelector('.motion-label').textContent = userPaused ? 'Resume' : 'Pause';
     if (animation) shouldPause() ? animation.pause() : animation.play();
   }
   function fit() {
@@ -48,7 +43,6 @@
       candidate.remove(); // Keep the existing still image if decoding fails.
     } finally { pending = false; sync(); }
   }
-  control.addEventListener('click', () => { userPaused = !userPaused; sync(); });
   preference.addEventListener('change', () => { sync(); prepare(); });
   document.addEventListener('visibilitychange', sync);
   new ResizeObserver(fit).observe(main);

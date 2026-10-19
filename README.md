@@ -24,7 +24,7 @@ The editorial Basho Studios identity uses Newsreader typography, fine-line icons
 and restrained charcoal tones. The background is prerendered artwork with desktop
 and mobile WebP assets. A seamless, non-mirrored raster strip moves at 8 CSS pixels
 per second using one Web Animation transform and two copies of the same image.
-Pause/Resume, reduced-motion still fallback, hidden/offscreen suspension, and
+Reduced-motion still fallback, hidden/offscreen suspension, and
 image-load failure fallback are supported. Reduced-motion initial visits do not
 request loop assets. The loop also pauses while Games is open. No generator or
 per-frame JavaScript runs in visitors' browsers. Games opens

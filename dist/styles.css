@@ -10,3 +10,5 @@ a,a:visited{color:inherit}button{font:inherit;color:inherit}button:focus-visible
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .landscape{overflow:hidden}.landscape-still{position:absolute;inset:0;display:block}.landscape-track{position:absolute;left:0;bottom:0;display:flex;width:calc(var(--tile-width) * 2);height:var(--tile-height);visibility:hidden;will-change:transform}.landscape-tile{display:block;flex:none;width:var(--tile-width);height:var(--tile-height)}.landscape .landscape-tile img{width:100%;height:100%;object-fit:fill}.landscape.is-ready:not(.is-still) .landscape-still{visibility:hidden}.landscape.is-ready:not(.is-still) .landscape-track{visibility:visible}@media(prefers-reduced-motion:reduce){.landscape-track{visibility:hidden!important}.landscape-still{visibility:visible!important}}
+
+@media(max-width:700px){.identity nav{flex-wrap:wrap;row-gap:14px}.identity .selection.links{flex-basis:100%;max-width:355px}}
